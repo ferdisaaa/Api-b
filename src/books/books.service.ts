@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Book } from './entity/book-entity.js';
-import { createbookdto } from './dto/create-book.dto.js';
+import { CreatebookDto } from './dto/create-book.dto.js';
 import { error } from 'console';
 
 @Injectable()
@@ -28,7 +28,7 @@ export class BooksService {
         return this.books;
     }
 
-    simpandata(createbookdto: createbookdto): Book{
+    simpandata(createbookdto: CreatebookDto): Book{
         const newbook: Book = {
             id: this.books.length + 1,
             title: createbookdto.title,
@@ -42,7 +42,7 @@ export class BooksService {
         return newbook;
     };
 
-    updatedata(id: number, updatebookdto: createbookdto): Book{
+    updatedata(id: number, updatebookdto: CreatebookDto): Book{
         const bookIndex = this.books.findIndex(Book => Book.id === id);
         if(bookIndex === -1) {
             throw new Error(`buku dengan id ${id} tidak ditemukan`);
