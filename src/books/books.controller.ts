@@ -19,18 +19,18 @@ export class BooksController {
         return this.bookservice.simpandata(createbookdto);
     }
 
-    // mengupdate data
-    @Put(':id')
-    updateData(
-        @Param(`id`) id: string,
-        @Body() createbookdto: CreatebookDto) {
-        return this.bookservice.updatedata(parseInt(id), createbookdto);
-    }
+    // // mengupdate data
+    // @Put(':id')
+    // updateData(
+    //     @Param(`id`) id: string,
+    //     @Body() createbookdto: CreatebookDto) {
+    //     return this.bookservice.updatedata(parseInt(id), createbookdto);
+    // }
 
-    // menghapus data
-    @Delete(':id')
-    hapusdata(@Param('id') id: string) {
-        return this.bookservice.hapusdata(parseInt(id));
-    }
+    // // menghapus data
+    // @Delete(':id')
+    // hapusdata(@Param('id') id: string) {
+    //     return this.bookservice.hapusdata(parseInt(id));
+    // }
 
 }

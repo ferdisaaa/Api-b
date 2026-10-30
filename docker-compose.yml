@@ -1,0 +1,15 @@
+services:
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: hakat_store_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: supersecretpassword
+      POSTGRES_DB: harkat_store_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_volume:/var/lib/postgresql/data
+
+volumes:
+  postgres_data_volume:
